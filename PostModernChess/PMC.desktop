@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=PostModernChess
+Comment=Modern Chess Application
+Exec=/usr/bin/PMCExecute %f
+Terminal=false
+Icon=/usr/share/PMC/pixmaps/PMC_Icon.png
+Type=Application
+Categories=Application;Games;
+MimeType=application/x-sh;
+X-KeepTerminal=false
