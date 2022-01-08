@@ -1,0 +1,2 @@
+java -jar --module-path \Cloud-Speicher\github\Development_Projects\PostModernChess\javafx.base.jar,"D//Cloud-Speicher/github/Development_Projects/PostModernChess/javafx.graphics.jar","D//Cloud-Speicher/github/Development_Projects/PostModernChess/javafx.controls.jar","D//Cloud-Speicher/github/Development_Projects/PostModernChess/javafx.fxml.jar" --add-modules javafx.base,javafx.graphics,javafx.controls,javafx.fxml D://Cloud-Speicher/github/Development_Projects/PostModernChess/Postmodern_Chess.jar
+
