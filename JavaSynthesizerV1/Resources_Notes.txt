@@ -1,0 +1,68 @@
+***************************************
+********* Internet ********************
+***************************************
+
+### Java: Audio 
+https://docs.oracle.com/javase/8/docs/technotes/guides/sound/programmer_guide/contents.html
+https://docs.oracle.com/javase/7/docs/api/javax/sound/midi/Synthesizer.html
+https://dbs.cs.uni-duesseldorf.de/lehre/docs/java/javabuch/html/k100301.html
+https://docs.oracle.com/javase/9/docs/api/index.html?javax/sound/midi/Synthesizer.html
+https://docs.oracle.com/javase/tutorial/sound/MIDI-synth.html
+https://community.oracle.com/tech/developers/discussion/1273219/example-code-to-generate-audio-tone
+- Sound Synthesis in Java:
+https://evanxmerz.com/soundsynthjava/Sound_Synth_Java.html
+- API JSyn: http://www.softsynth.com/jsyn/
+- Java Synthesizer Tutorial:
+https://www.demo2s.com/java/java-synthesizer-tutorial-with-examples.html
+
+### Programming Languages
+https://en.wikipedia.org/wiki/List_of_audio_programming_languages
+https://integraudio.com/best-tools-to-develop-vst-plugins/
+--> JUCE Library for C++
+
+### Synthesizer Design
+http://www.martin-finke.de/blog/articles/audio-plugins-001-introduction/
+--> in C++
+http://tropone.de/2020/04/16/vst-plugin-programmierung-01-juce-installieren-und-hello-word-plugin-generieren/
+--> JUCE C++
+- Blog of Evan X. Merz
+https://evanxmerz.com/
+
+### VST
+https://en.wikipedia.org/wiki/Virtual_Studio_Technology
+http://jvstwrapper.sourceforge.net/
+
+### Looking Ahead
+https://www.theaudioprogrammer.com/
+http://linux-sound.org/
+
+### General Java
+https://www.oracle.com/topics/technologies/newtojava/programming-center.html
+
+### youtube
+https://www.youtube.com/watch?v=1gir2R7G9ws&list=PLWms45O3n--6TvZmtFHaCWRZwEqnz2MHa
+https://www.youtube.com/watch?v=q09cNItGhLQ
+
+### Game Development
+https://zetcode.com/javagames/
+
+***************************************
+********* Books/PDF ********************
+***************************************
+- The Scientist and Engineer's Guide to DSP [DONE]
+- The Audio Programming Book (Mit Press)
+- JavaFX Programming Cookbook [DONE]
+- Game Programming Patterns
+- Learning Libgdx Game Development [DONE]
+- Linux Sound Programming [DONE] - under "Books"
+
+******************************************************************************
+##############################################################################
+
+***************************************
+*** Notes *****************************
+***************************************
+
+- also experiment a bit with Reaktor in order to get a feeling/understanding of what
+components should be there in a synthesizer
+http://teragonaudio.com/article/What-language-should-I-learn-to-write-audio-plugins.html
