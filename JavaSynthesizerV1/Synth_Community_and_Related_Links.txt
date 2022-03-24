@@ -1,0 +1,124 @@
+*********************************************************
+******************** Community **************************
+*********************************************************
+- Reaper Forum: https://forum.cockos.com/forumdisplay.php?f=20
+--> especially, e.g., Developer Subsection
+- Audacity Forum: https://forum.audacityteam.org/
+- KVR: https://www.kvraudio.com/forum/ --> ask q and read forums!
+--> e.g.: https://www.kvraudio.com/forum/viewforum.php?f=33
+
+- SOS: Forum + Seite:
+https://www.soundonsound.com/forum
+
+- https://www.sequencer.de/blog/
+--> Forum, Blog
+
+- https://www.musiker-board.de/forum/synthesizer.62/
+--> allgemeiner für Musik, eher Anwender
+
+- https://recording.de/forum/do-it-yourself-diy.40/
+--> auch eher Anwender, plus Musikproduktion
+
+- sehr speziell: MIDIBox (Controller): http://midibox.org/forums/
+
+- allgemein für Developer:
+https://devtalk.com/
+
+- eher für Hardware, aber umfangreich und interessant:
+https://www.modwiggler.com/forum/
+
+- Steinberg Developers (quite rudimentary up to now...)
+https://forums.steinberg.net/c/developer/103/none
+
+- JUCE-Forum:
+https://forum.juce.com/
+
+- auch Anwender (Reason): https://forum.reasontalk.com/
+
+- Anwender (Ableton): https://forum.ableton.com/
+
+- Hise (Framework for sample based instruments)
+https://forum.hise.audio/
+
+
+*********************************************************
+***************** Developper Guides *********************
+*********************************************************
+- Steinberg Technologies (Overview): https://www.steinberg.net/technology/
+- Steinberg SDK's: https://www.steinberg.net/developers/
+- VST: https://www.asktoby.com/#vsttutorial
+- https://forums.steinberg.net/t/external-links-to-vst3-dsp-conferences-and-plug-ins-development/201741
+--> VST API: https://steinbergmedia.github.io/vst3_doc/vstsdk/index.html
+--> see also: https://developer.steinberg.help/display/VST/VST+Home
+- lightweight tutorial: https://audioassemble.com/how-to-make-a-vst/
+- Course by Output: https://www.kadenze.com/programs/output-teaches-creating-audio-plugins-with-c-and-juce
+--> C++, JUCE
+
+***************** Hardware ******************************
+- Doepfer DIY-Synth:
+https://doepfer.de/DIY_Synth_d.htm
+
+- Liste DIY-Synths:
+https://thevinylfactory.com/features/8-diy-analogue-synthesizers-you-can-build-at-home/
+
+- Reason SDK:
+https://developer.reasonstudios.com/discover/rack-extension-sdk
+
+- 
+
+*********************** Technologies ********************
+- http://www.hise.audio/
+- https://juce.com/
+- VST(3) (see Steinberg)
+- ASIO
+- synthedit.com
+- Nice overview:
+https://www.soundonsound.com/techniques/vst-diy
+
+*********************************************************
+*************** VST, Reaper, Other DAW, Plugins *********
+*********************************************************
+
+*** Reaper:
+https://stash.reaper.fm/
+https://reaperblog.net/
+https://www.reaper.fm/ --> siehe unten auch Developer, User Guide etc.
+https://forum.cockos.com/forumdisplay.php?f=20
+
+--> other things by Cockos:
+https://www.cockos.com/
+--> checkout JSFX: https://www.cockos.com/jsfx/
+
+- Audacity:
+https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page
+--> Development: https://www.audacityteam.org/community/developers/
+
+- Output:
+--> Blog: https://output.com/blog
+
+*** Hobby Developers (and their technologies, possibly Open Source etc.) ***
+- vllt. interessanter Kontakt (BigCat)?
+http://bigcatinstruments.blogspot.com/
+- Odosynths:
+https://theodosynthsarchive.wordpress.com/
+- KBrown
+https://kbrownsynthplugins.weebly.com/about.html
+- Herrmann Seib
+https://www.hermannseib.com/english/vsthost.htm
+- Simple Media
+http://www.simple-media.co.uk/
+- ldasynths:
+http://ldaysynths.blogspot.com/
+- Meesha
+http://www.meesha.nl/vst/home.html --> made by Synthedit
+- Full Bucket Music (Synth Passionate) 
+https://www.fullbucket.de/music/
+
+******************************************
+**** Stellenangebote
+
+https://www.ableton.com/en/jobs/apply/465064/
+https://karriere.magix.com/en
+
+- mal anfragen:
+https://tal-software.com/about

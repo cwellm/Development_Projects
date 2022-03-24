@@ -1,8 +1,17 @@
+****
+- ESLint: zum Linting für den Code - man kann eigene Regeln entwerfen und
+dadurch Code-Standartisierung erhalten
+- Account Freesound.org: wellm.musik//jimjones2007music
+
 ***************************************
 ********* Internet ********************
 ***************************************
 
+### Some Articles
+http://shanekirk.com/2015/10/a-brief-history-of-windows-audio-apis/
+
 ### Java: Audio 
+https://www.oracle.com/java/technologies/java-sound-api.html
 https://docs.oracle.com/javase/8/docs/technotes/guides/sound/programmer_guide/contents.html
 https://docs.oracle.com/javase/7/docs/api/javax/sound/midi/Synthesizer.html
 https://dbs.cs.uni-duesseldorf.de/lehre/docs/java/javabuch/html/k100301.html
@@ -14,6 +23,7 @@ https://evanxmerz.com/soundsynthjava/Sound_Synth_Java.html
 - API JSyn: http://www.softsynth.com/jsyn/
 - Java Synthesizer Tutorial:
 https://www.demo2s.com/java/java-synthesizer-tutorial-with-examples.html
+- MP3: JLayer library: https://github.com/umjammer/jlayer
 
 ### Programming Languages
 https://en.wikipedia.org/wiki/List_of_audio_programming_languages
@@ -35,6 +45,11 @@ http://jvstwrapper.sourceforge.net/
 ### Looking Ahead
 https://www.theaudioprogrammer.com/
 http://linux-sound.org/
+--> also interesting libraries:
+https://www.oracle.com/java/technologies/javase/java-3d.html
+https://www.oracle.com/java/technologies/javase/java-media-framework.html
+--> Java Oracle Tutorials:
+https://docs.oracle.com/javase/tutorial/
 
 ### General Java
 https://www.oracle.com/topics/technologies/newtojava/programming-center.html
@@ -55,6 +70,15 @@ https://zetcode.com/javagames/
 - Game Programming Patterns
 - Learning Libgdx Game Development [DONE]
 - Linux Sound Programming [DONE] - under "Books"
+- Boulanger: The Audio Programming Book
+- Designing Software Synthesizer Plugins in C++ (Pirkle)
+- Designing Auio Effect Plugins in C++ (Pirkle)
+
+***************************************
+********* Audio (File) Formats ********************
+***************************************
+--> general: https://en.wikipedia.org/wiki/Audio_file_format
+--> most important: https://www.adobe.com/creativecloud/video/discover/best-audio-format.html
 
 ******************************************************************************
 ##############################################################################
@@ -66,3 +90,18 @@ https://zetcode.com/javagames/
 - also experiment a bit with Reaktor in order to get a feeling/understanding of what
 components should be there in a synthesizer
 http://teragonaudio.com/article/What-language-should-I-learn-to-write-audio-plugins.html
+
+
+***** Educate Myself *****
+- modifier order and general style: https://checkstyle.sourceforge.io/config_modifier.html
+
+- Buffering (Why? How? What?)
+- Java Streams (IOStreams)
+- Java Streams (mit dots usw.)
+- mp3 - Encoding
+- Java type casting, generics
+- die Klassen von javax.sound.sampled anschauen und verstehen
+- Java class Class
+- Reading from/Writing to a stream/buffer; general treatment of 
+streams/file streams in Java???
+--> especially with byte[] b arrays as input?

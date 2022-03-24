@@ -1,0 +1,66 @@
+#################################################################
+############## Java Streams API #################################
+#################################################################
+--> https://www.baeldung.com/java-8-streams
+--> see also: StreamHierarchy, StreamClassification, ReaderWriterHierarchy
+
+
+#################################################################
+################## Basic I/O ####################################
+#################################################################
+
+--> https://docs.oracle.com/javase/tutorial/essential/io/index.html
+
+*** classes:
+- java.io, java.nio.file
+
+*** Words:
+- I/O - Streams
+
+--> InputStream, OutputStream abstract classes:
+https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html
+https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html
+
+- byte streams, e.g. FileInputStream and FileOutputStream
+--> byte streams in Java: https://www.javatpoint.com/bytestream-classes-in-java
+--> Java data type byte: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+- Character Streams --> descend from Reader, Writer
+--> FileReader, FileWriter for character files
+--> in general for character streams: InputStreamReader, OutputStreamWriter
+--> for lines e.g. BufferedReader, PrintWriter
+
+*** Buffered vs. Unbuffered
+--> unbuffered: each read/write request directly handled by underlying OS
+--> buffered: take data from/write to a buffer --> native input/output API triggered
+only when buffer empty/full (reduces processing overhead)
+--> in Java: BufferedInputStream, BufferedReader, BufferedOutputStream, BufferedWriter -
+they are wrapped around unbuffered stream (take it as argument) to make it buffered
+--> flushing stream, autoflush
+
+- java.util.Scanner: break down formatted input into tokens (read)
+--> input can be File, System.in, BufferedReader etc. - see docs
+- formatting API: assemble data into human-readable form: PrintWriter, PrintStream (write)
+--> format string syntax: https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax
+--> platform specific line separator: %n
+
+*** I/O from command line
+- standard streams of operating system automatically opened
+--> System.in, System.out, System.err --> refer to command line interpreter doc for more information about
+OS specific types of those
+--> are technically byte streams, but are internally converted
+--> System.in needs to be wrapped, eg. in InputStreamReader however
+- more advanced: Console class
+
+- DataStreams, ObjectsStreams - former for primitive data types, latter for objects
+--> can be quite sophisticated - maybe sometimes useful?
+
+- Files:
+--> nio: https://www.marcobehler.com/guides/java-files, https://docs.oracle.com/javase/tutorial/essential/io/file.html
+--> io: https://www.geeksforgeeks.org/file-class-in-java/, https://docs.oracle.com/javase/7/docs/api/java/io/File.html
+
+
+
+************** Audio ******************
+- AudioInputStream/-OutPutStream extend corresponding Input/OutputStream 
+--> https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioInputStream.html
