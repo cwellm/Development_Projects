@@ -105,3 +105,4 @@ http://teragonaudio.com/article/What-language-should-I-learn-to-write-audio-plug
 - Reading from/Writing to a stream/buffer; general treatment of 
 streams/file streams in Java???
 --> especially with byte[] b arrays as input?
+- Threads - Runnable, extending thread etc. 

@@ -41,10 +41,10 @@ import java.io.IOException;
 
 public class P1_Small_Swing_Player implements ActionListener {
 
-    private P1_StartStop player;
+    private ThreadedControls player;
     private JFrame frame;
     private JPanel panel;
-    protected JButton buttonPlay, buttonStop;
+    protected JButton buttonPlay, buttonStop, buttonPause;
     private String inputFile;
 
     protected P1_Small_Swing_Player(String inputFile) {
@@ -60,16 +60,20 @@ public class P1_Small_Swing_Player implements ActionListener {
         buttonPlay = new JButton(iconPlay);
         Icon iconStop = new ImageIcon("resources/button_STOP.png");
         buttonStop = new JButton(iconStop);
+        Icon iconPause = new ImageIcon("resources/button_PAUSE.png");
+        buttonPause = new JButton(iconPause);
         panel.add(buttonPlay);
         panel.add(buttonStop);
+        panel.add(buttonPause);
 
         // add listeners for actions to the buttons
         buttonPlay.addActionListener(this);
         buttonStop.addActionListener(this);
+        buttonPause.addActionListener(this);
 
         // musical stuff
         this.inputFile = inputFile;
-        player = new P1_StartStop(inputFile);
+        player = new ThreadedControls(inputFile);
     }
 
     public void minimalPlayer() {
@@ -86,16 +90,18 @@ public class P1_Small_Swing_Player implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == buttonPlay) {
             System.out.println("Play!");
-            try {
                 player.start();
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
         }
 
         if (actionEvent.getSource() == buttonStop) {
             System.out.println("Stop!");
             player.stop();
+
+        }
+
+        if (actionEvent.getSource() == buttonPause) {
+            System.out.println("Pausing music.");
+            player.pause();
 
         }
     }
