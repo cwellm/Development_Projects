@@ -39,7 +39,9 @@ public class MicroRecorder extends AbstractRecorder {
 
         try {
             line = (TargetDataLine) AudioSystem.getLine(dataLineInfo);
+            line.addLineListener(listener);
             line.open(format);
+            System.out.println("Line with info '" + line.getLineInfo() + "' opened");
             byte[] byteBuffer = new byte[line.getBufferSize()/4];
             int numBytesRead;
             line.start();
@@ -60,6 +62,7 @@ public class MicroRecorder extends AbstractRecorder {
             System.exit(1);
         } finally {
             if (!(line == null)) {
+                System.out.println("Closing Recorder Line. Cleaning up.");
                 line.drain();
                 line.close();
             }

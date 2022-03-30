@@ -10,9 +10,10 @@ public abstract class AbstractRecorder {
     protected TargetDataLine line;
     protected AudioFormat format;
     protected DataLine.Info dataLineInfo;
+    protected File file;
 
     AbstractRecorder() {
-        File file = new File("SingingBowl.wav");
+        file = new File("SingingBowl.wav");
         try {
             this.format = AudioSystem.getAudioFileFormat(file).getFormat();
         }

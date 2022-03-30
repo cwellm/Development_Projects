@@ -1,0 +1,39 @@
+1.) Simple GUI with "Start" and "Stop" Button
+for Recording
+--> GUI Frameworks: 
+https://coderslegacy.com/java-gui-frameworks-guide/
+--> choice: Swing (as a practice)
+--> do all in Swing!
+
+--> CHALLENGE: Play without blocking everything else,
+so one can stop!
+
+2.) Simple Media Player with file selection,
+Start, Stop, Pause Button
+2b) Slider to see position and change it
+
+3.) a tool to select, in a meaningful/reasonable way,
+input and output devices e.g. headphones vs. loudspeakers, 
+microphone vs. internal streams etc.) 
+3a) actually play and/or record audio 
+
+4.) add effects, volume, panning etc.
+
+5.) fully featured audio program with following features:
+- start/stop/pause/next/previous buttons
+- drag'n'drop playlist (which can be saved to and loaded
+from file) 
+- volume adjustment
+- some effects 
+- some visual response (e.g. Fourier transform)
+- record button to record from source and write to 
+specified file
+- well-written, fully covering tests
+
+6.) Like 5, but in JavaFX
+
+----------------------------------------------------------
+
+*** Synth ***
+
+S1) simple sine tone with specified length, volume and frequency
