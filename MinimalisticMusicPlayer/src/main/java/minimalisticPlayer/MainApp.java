@@ -3,6 +3,7 @@ package minimalisticPlayer;
 /**
  * Class for starting the player. Calls the Swing thread and opens the swing window with all functionality.
  */
+// @TODO Add slider to modify the position within the music file
 public class MainApp {
 
     public static void main(String[] args) {

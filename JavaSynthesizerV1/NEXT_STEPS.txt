@@ -12,6 +12,16 @@ so one can stop!
 Start, Stop, Pause Button
 2b) Slider to see position and change it
 
+2.5 ---- Learning Intermezzo -----
+a) Threads: Parallel Processing, Was gibt's im Allgemeinen zu beachten?;
+Umsetzungen in Java
+--> Beispielcodes
+b) Arbeiten mit Java Generics (und sinnvolle Anwendungsgebiete?)
+--> Beispielcodes/Programme; auch: korrektes Casting von Values (was steht auf der linken,
+was auf der rechten Seite? Wie gestalte ich das transparent? Wann sollte ich Object nehmen,
+wann spezifischer werden etc.? --> runtime vs. compile time= Erwägungen? etc.)
+c) Audiodateiformate - insbesondere mp3-en/decoding
+
 3.) a tool to select, in a meaningful/reasonable way,
 input and output devices e.g. headphones vs. loudspeakers, 
 microphone vs. internal streams etc.) 
@@ -29,6 +39,12 @@ from file)
 - record button to record from source and write to 
 specified file
 - well-written, fully covering tests
+
+5.5A) ----- Learning Intermezzo -----
+a) Software Design
+- Design Patterns
+- Vorüberlegungen für ein Feature Set, ein bestimmtes Programm, dessen Aufbau etc.
+- UML als mögliche Hilfe
 
 6.) Like 5, but in JavaFX
 
