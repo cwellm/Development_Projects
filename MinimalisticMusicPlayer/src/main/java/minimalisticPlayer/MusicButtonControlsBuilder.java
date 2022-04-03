@@ -23,9 +23,10 @@ public class MusicButtonControlsBuilder {
     private File file;
     private SourceDataLine bufferLine;
     private FileHandler handler; // @TODO: should be final, i.e. may not be changed, but so far, is in conflict with constructor...
+    private MinimalisticPlayerFrontend frontend;
     private int stateVariable; // depending on which constructor was called, build method is implemented differently
 
-    public MusicButtonControlsBuilder() {
+    public MusicButtonControlsBuilder(FileHandler handler, MinimalisticPlayerFrontend frontend) {
         isPlaying = false;
         isPaused = false;
         fileByteLength = 0;
@@ -34,19 +35,15 @@ public class MusicButtonControlsBuilder {
         myStream = null;
         file = null;
         bufferLine = null;
-        handler = new FileHandler();
-        stateVariable = 0;
-    }
-
-    public MusicButtonControlsBuilder(FileHandler handler) {
-        this();
         this.handler = handler;
+        this.frontend = frontend;
+        stateVariable = 0;
     }
 
     public MusicButtonControls build() {
         if (stateVariable == 0) {
             stateVariable+=1;
-            return new MusicButtonControls(file, mixer, myStream, bufferLine, fileByteLength);
+            return new MusicButtonControls(file, mixer, myStream, bufferLine, fileByteLength, frontend);
         } else {
             file = handler.getMusicFile();
             AudioSystemProvider provider = new AudioSystemProvider(file);
@@ -61,7 +58,7 @@ public class MusicButtonControlsBuilder {
                 isPaused = false;
                 bytesReadFromFile = 0;
             }
-            return new MusicButtonControls(file, mixer, myStream, bufferLine, fileByteLength);
+            return new MusicButtonControls(file, mixer, myStream, bufferLine, fileByteLength, frontend);
         }
     }
 }

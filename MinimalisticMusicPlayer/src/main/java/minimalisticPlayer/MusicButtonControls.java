@@ -13,18 +13,21 @@ public class MusicButtonControls {
     private boolean isPaused; // indicate whether a played file is set to "pause" mode
     private long fileByteLength;
     private long bytesReadFromFile;
+    private long totalFramesRead;
     private Mixer mixer;
     private AudioInputStream myStream;
     private File file;
     private SourceDataLine bufferLine;
     private Thread musicPlayingThread;
+    private MinimalisticPlayerFrontend frontend;
 
-    MusicButtonControls(File file, Mixer mixer, AudioInputStream myStream, SourceDataLine bufferLine, long fileByteLength) {
+    MusicButtonControls(File file, Mixer mixer, AudioInputStream myStream, SourceDataLine bufferLine, long fileByteLength, MinimalisticPlayerFrontend frontend) {
         this.file = file;
         this.mixer = mixer;
         this.myStream = myStream;
         this.bufferLine = bufferLine;
         this.fileByteLength = fileByteLength;
+        this.frontend = frontend;
         isPlaying = false;
         isPaused = false;
             }
@@ -63,6 +66,7 @@ public class MusicButtonControls {
 
     public synchronized void stop() {
         isPlaying = false;
+        bytesReadFromFile = 0;
         bufferLine.drain();
         bufferLine.flush();
         bufferLine.close();
@@ -104,6 +108,7 @@ public class MusicButtonControls {
 
                 public void run() {
                     bufferLine.start();
+                    totalFramesRead = 0;
                     while (isPlaying && bytesReadFromFile < fileByteLength) {
                         while (isPaused) {
                             try {
@@ -114,6 +119,7 @@ public class MusicButtonControls {
                         }
                         try {
                             numBytesRead = myStream.read(b, 0, chunkSize);
+                            totalFramesRead = totalFramesRead + numBytesRead/(int)myStream.getFormat().getFrameSize();
                         } catch (IOException e) {
                             System.out.println(e.getMessage() + "...ERROR while trying to read audio file.");
                         }
@@ -125,6 +131,7 @@ public class MusicButtonControls {
                         }
                         bytesReadFromFile += numBytesRead;
                         bufferLine.write(b, 0, numBytesRead);
+                        frontend.slider.setValue((int)bytesReadFromFile);
                     }
                 }
             };

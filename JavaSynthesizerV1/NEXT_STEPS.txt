@@ -12,6 +12,13 @@ so one can stop!
 Start, Stop, Pause Button
 2b) Slider to see position and change it
 
+--> CHALLENGE: Find a good way to resume playing at the
+position specified by the slider...
+* remember file byte (or frame) position, reload file and
+put into stream, read from specified position on
+* load whole file into buffer (e.g. via Clip)
+* consult internet 
+
 2.5 ---- Learning Intermezzo -----
 a) Threads: Parallel Processing, Was gibt's im Allgemeinen zu beachten?;
 Umsetzungen in Java
