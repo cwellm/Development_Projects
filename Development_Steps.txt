@@ -1,0 +1,11 @@
+* roman numerals behind a number can be worked on simultaneously
+
+1i.) Finish OOD - Coursera - Course
+1ii.) Finish App Basics readings https://developer.android.com/training/basics/firstapp/building-ui
+(use Java so far!)
+1iii.) Do some UML Diagram of a part of the ECU-TEST-Execution plugin (Class, Sequence, State)
+
+2.) Continue with NEXT_STEPS in Java Synthesizer and finish up to the given point
+
+3i.) Design Patterns in Coursera
+3ii.) Something about digital signal processing

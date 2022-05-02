@@ -6,10 +6,10 @@ https://coderslegacy.com/java-gui-frameworks-guide/
 --> do all in Swing!
 
 --> CHALLENGE: Play without blocking everything else,
-so one can stop!
+so one can stop! DONE
 
 2.) Simple Media Player with file selection,
-Start, Stop, Pause Button
+Start, Stop, Pause Button DONE
 2b) Slider to see position and change it
 
 --> CHALLENGE: Find a good way to resume playing at the
@@ -28,13 +28,25 @@ b) Arbeiten mit Java Generics (und sinnvolle Anwendungsgebiete?)
 was auf der rechten Seite? Wie gestalte ich das transparent? Wann sollte ich Object nehmen,
 wann spezifischer werden etc.? --> runtime vs. compile time= Erwägungen? etc.)
 c) Audiodateiformate - insbesondere mp3-en/decoding
+d) Create some user stories and CRC cards for various purposes (not for this
+audio tasks!)
+e) UML-Diagramm für Programm aus 2.) 
+f) CRC, user story, UML for the specific purpose of a translator/vocabulary trainer program.
+(Think about all requirements - e.g. also look of UI, functionality, languages, ...)
 
 3.) a tool to select, in a meaningful/reasonable way,
 input and output devices e.g. headphones vs. loudspeakers, 
 microphone vs. internal streams etc.) 
+--> according User Story:
+--> CRC-Cards?
+
 3a) actually play and/or record audio 
+--> according User Story:
+--> CRC-Cards?
 
 4.) add effects, volume, panning etc.
+--> according User Story:
+--> CRC-Cards?
 
 5.) fully featured audio program with following features:
 - start/stop/pause/next/previous buttons
@@ -46,6 +58,7 @@ from file)
 - record button to record from source and write to 
 specified file
 - well-written, fully covering tests
+---> create CRC-Cards and a design (e.g. UML) before implementing!
 
 5.5A) ----- Learning Intermezzo -----
 a) Software Design
