@@ -9,6 +9,7 @@ import java.io.IOException;
  */
 public class MusicButtonControls {
 
+    private static final int CHUNK_SIZE = 1024;
     private boolean isPlaying; // indicate whether file is being played in a thread at the moment
     private boolean isPaused; // indicate whether a played file is set to "pause" mode
     private long fileByteLength;
@@ -80,7 +81,7 @@ public class MusicButtonControls {
         }
     }
 
-    public synchronized void start(){
+    public synchronized void start(long... skipBytes){
         if (!isPlaying) {
             isPlaying = true;
             try {
@@ -94,6 +95,11 @@ public class MusicButtonControls {
             }
             try {
                 this.myStream = AudioSystem.getAudioInputStream(file);
+                if (skipBytes.length > 0) {
+                    this.myStream.skip(skipBytes[0]);
+                    frontend.slider.setValue((int)skipBytes[0]);
+                    System.out.println("Skipped " + skipBytes[0] + " bytes");
+                }
             } catch (UnsupportedAudioFileException e) {
                 System.out.println(e.getMessage());
             } catch (IOException e) {
@@ -102,7 +108,7 @@ public class MusicButtonControls {
             System.out.println("Playing set true.");
             System.out.println(fileByteLength);
             Runnable runnable = new Runnable() {
-                final int chunkSize = 1024;
+                final int chunkSize = CHUNK_SIZE;
                 int numBytesRead = 0; // bytes read from last chunk grabbing
                 byte[] b = new byte[chunkSize];
 
@@ -131,7 +137,11 @@ public class MusicButtonControls {
                         }
                         bytesReadFromFile += numBytesRead;
                         bufferLine.write(b, 0, numBytesRead);
-                        frontend.slider.setValue((int)bytesReadFromFile);
+                        int shift = 0;
+                        if (skipBytes.length > 0) {
+                            shift = (int)skipBytes[0];
+                        }
+                        frontend.slider.setValue((int)bytesReadFromFile + shift);
                     }
                 }
             };
@@ -140,5 +150,10 @@ public class MusicButtonControls {
         } else {
             System.out.println("Already set to play. Possibly paused.");
         }
+    }
+
+    public void setStreamPosition(long frameCompatibleBytePosition) {
+        stop();
+        start(frameCompatibleBytePosition);
     }
 }

@@ -51,6 +51,7 @@ public class MinimalisticPlayerFrontend {
         buttonPause.addActionListener(listener);
         buttonOpenFile.addActionListener(listener);
         slider.addMouseListener(listener);
+        slider.addChangeListener(listener);
 
     }
 

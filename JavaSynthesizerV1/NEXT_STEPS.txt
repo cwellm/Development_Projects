@@ -18,6 +18,9 @@ position specified by the slider...
 put into stream, read from specified position on
 * load whole file into buffer (e.g. via Clip)
 * consult internet 
+---> PROBLEM: slider behavior when releasing mouse is not as expected
+(does not necessarily return slider position, but something random...)
+--> MAKE THIS A TASK FOR NEXT STEPS!
 
 2.5 ---- Learning Intermezzo -----
 a) Threads: Parallel Processing, Was gibt's im Allgemeinen zu beachten?;

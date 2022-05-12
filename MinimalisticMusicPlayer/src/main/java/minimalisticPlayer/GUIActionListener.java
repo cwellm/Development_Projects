@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class GUIActionListener implements ActionListener, MouseListener {
+public class GUIActionListener implements ActionListener, MouseListener, ChangeListener {
 
     protected JButton buttonPlay, buttonStop, buttonPause, buttonOpenFile;
     protected JSlider slider;
@@ -79,10 +79,16 @@ public class GUIActionListener implements ActionListener, MouseListener {
     public void mouseReleased(MouseEvent mouseEvent) {
         JSlider source = (JSlider)mouseEvent.getSource();
         if (source.equals(slider)) {
-            long frameCompatibleBytePosition = ((long)source.getValue()) -
-                    ((long)source.getValue()) % frontend.buttonControls.getMyStream().getFormat().getFrameSize();
-            System.out.println(frameCompatibleBytePosition);
-        }
+                long frameCompatibleBytePosition = ((long) source.getValue()) -
+                        ((long) source.getValue()) % frontend.buttonControls.getMyStream().getFormat().getFrameSize();
+                System.out.println(frameCompatibleBytePosition);
+                frontend.buttonControls.setStreamPosition(frameCompatibleBytePosition);
+            }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent event) {
+
     }
 
     @Override
