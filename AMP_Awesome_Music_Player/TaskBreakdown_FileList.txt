@@ -1,0 +1,27 @@
+1.) Need: JList, JFileChooser DONE
+
+--> functionality to add files to the list, either by
+drap n drop, or by clicking "Add"
+
+-->
+i) implement import functionality for the JList
+ii) implement export functionality for the JFileChooser (convert
+the filepath to a string; keep file path and String representation
+in the JList in one Map or sth.)
+iii) implement delete functionality in the JList
+
+2.) Add Transfer Handler
+
+3.) array where the file paths in the current list are saved
+
+4.) Change order of list items and be able to delete those
+
+5.) Files for saving and loading lists
+5b) Some buttons to save and load lists
+
+6.) Play the list from beginning to end by supplying the
+file paths to the basic music controls
+
+7.) By double clicking an item, play this immediately
+
+8.) Shuffle: Random order

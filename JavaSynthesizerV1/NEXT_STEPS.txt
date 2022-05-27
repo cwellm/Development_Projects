@@ -37,6 +37,9 @@ e) UML-Diagramm für Programm aus 2.)
 f) CRC, user story, UML for the specific purpose of a translator/vocabulary trainer program.
 (Think about all requirements - e.g. also look of UI, functionality, languages, ...)
 
+--> audio file format specifications: http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/
+https://www.loc.gov/preservation/digital/formats/fdd/fdd000012.shtml
+
 3.) a tool to select, in a meaningful/reasonable way,
 input and output devices e.g. headphones vs. loudspeakers, 
 microphone vs. internal streams etc.) 
@@ -68,6 +71,8 @@ a) Software Design
 - Design Patterns
 - Vorüberlegungen für ein Feature Set, ein bestimmtes Programm, dessen Aufbau etc.
 - UML als mögliche Hilfe
+b) Java Jackson: https://github.com/FasterXML/jackson 
+(und allgemein XML, JSON, (de)serialization)
 
 6.) Like 5, but in JavaFX
 

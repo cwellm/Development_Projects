@@ -1,6 +1,6 @@
 * roman numerals behind a number can be worked on simultaneously
 
-1i.) Finish OOD - Coursera - Course
+1i.) Finish OOD - Coursera - Course DONE
 1ii.) Finish App Basics readings https://developer.android.com/training/basics/firstapp/building-ui
 (use Java so far!)
 1iii.) Do some UML Diagram of a part of the ECU-TEST-Execution plugin (Class, Sequence, State)

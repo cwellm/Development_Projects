@@ -1,4 +1,10 @@
 package Executor;
 
-public class ParametersGUIExecutorV1 {
+import Controller.IParametersGUIController;
+
+public class ParametersGUIExecutorV1 implements IParametersGUIController {
+    @Override
+    public int volumeControl() {
+        return 0;
+    }
 }
