@@ -1,11 +1,20 @@
 package Controller;
 
+import FileUtils.Playlist;
+
+import javax.swing.*;
 import java.io.File;
-import java.util.ArrayList;
 
 public interface IFileSelectorGUIController {
+
+    void initialize(JFileChooser chooser, JList list);
     File loadFile();
-    ArrayList<File> loadPlaylist(String playlistFile);
+    Playlist loadPlaylist(String playlistFile);
     void savePlaylist(String playlistFile);
 
+    void setupFileChooser();
+
+    void setupPlaylistWindow();
+
+    void shuffleList();
 }

@@ -1,3 +1,3 @@
-songone.wav
-songtwo.wav
-musicFolder/song3.wav
+/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/SingingBowl.wav
+/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/piano_loops.wav
+/home/christoph/TestResources/wav_example.wav
