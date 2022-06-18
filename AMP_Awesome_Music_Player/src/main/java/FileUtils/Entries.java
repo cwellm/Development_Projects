@@ -6,7 +6,7 @@ import java.io.File;
 
 // todo: check Java version to make this a record
 @Getter
-class Entries {
+public class Entries {
     private File audioFile;
     private String songName;
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FileUtils.NameConverterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-18T06:03:27" hostname="myarchchristoph" time="0.004">
+  <properties/>
+  <testcase name="testFileToString(Path)" classname="FileUtils.NameConverterTest" time="0.001"/>
+  <testcase name="testNameToFile()" classname="FileUtils.NameConverterTest" time="0.0"/>
+  <testcase name="testToSongNameWithStringInput(Path)" classname="FileUtils.NameConverterTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

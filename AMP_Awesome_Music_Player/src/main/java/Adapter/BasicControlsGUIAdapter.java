@@ -1,5 +1,6 @@
 package Adapter;
 
+import Communicator.FileSelectorBasicControlsCommunicator;
 import Controller.IBasicControlsGUIController;
 import GUI.BasicControlsGUI;
 
@@ -9,6 +10,7 @@ import java.awt.event.ActionListener;
 public class BasicControlsGUIAdapter implements ActionListener {
 
     final BasicControlsGUI gui;
+
     IBasicControlsGUIController controller;
 
     public BasicControlsGUIAdapter(BasicControlsGUI gui, IBasicControlsGUIController controller) {
@@ -17,6 +19,7 @@ public class BasicControlsGUIAdapter implements ActionListener {
         this.gui.stopButton.addActionListener(this);
         this.gui.pauseButton.addActionListener(this);
         this.controller = controller;
+
     }
 
     @Override

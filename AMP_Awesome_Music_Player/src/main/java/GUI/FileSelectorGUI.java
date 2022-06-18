@@ -8,20 +8,15 @@ import javax.swing.*;
 // todo: add shuffle button/option
 public class FileSelectorGUI {
 
-    public JButton loadPlaylist;
+    public final JButton savePlaylist;
 
-    public JButton savePlaylist;
-
-    public JButton shuffleList;
+    public final  JButton shuffleList;
+    public final JFileChooser chooser;
+    public final JList<String> jlist;
 
     final FileSelectorGUIAdapter adapter;
     final IFileSelectorGUIController controller;
     private JPanel panel;
-    private JFileChooser chooser;
-    private JFileChooser saveLoadChooser;
-    private JList<String> jlist;
-
-
 
     public FileSelectorGUI(IFileSelectorGUIController controller) {
         this.controller = controller;
@@ -29,17 +24,15 @@ public class FileSelectorGUI {
         chooser = new JFileChooser();
         jlist = new JList<>();
         savePlaylist = new JButton("Save Playlist");
-        loadPlaylist = new JButton("Load Playlist");
         shuffleList = new JButton("Shuffle!");
 
         adapter = new FileSelectorGUIAdapter(this, controller);
-        adapter.setupFileChooserAndPlaylist(chooser, jlist);
+        adapter.setupFileChooserAndPlaylist();
 
         panel = new JPanel();
         panel.add(chooser);
         panel.add(jlist);
         panel.add(savePlaylist);
-        panel.add(loadPlaylist);
         panel.add(shuffleList);
     }
 

@@ -34,6 +34,7 @@ import java.io.File;
 // make the player aware that now, the audio system supports more files
 // todo: try to use only java.nio instead of java.io, where reasonable
 // todo: consistency: all lombok getter and setter, instead of explicitly writing them
+// todo: separate unit tests from integration tests
 
 public class MainApp {
     public static void main(String[] args) {

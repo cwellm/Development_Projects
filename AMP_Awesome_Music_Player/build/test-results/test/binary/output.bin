@@ -1,9 +1,8 @@
-h/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/wav_example.wav
-j/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/aiff_example.aiff
-f/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/au_example.au
-h/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/mp3_example.mp3
-h/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/wav_example.wav
-j/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/aiff_example.aiff
-	f/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/au_example.au
+h/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/wav_example.wav
+	j/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/aiff_example.aiff
 
-h/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/mp3_example.mp3
+f/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/au_example.au
+h/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/mp3_example.mp3
+-/tmp/junit10254404164126183134/firstSong.wav
+h/home/christoph/github/Development_Projects/AMP_Awesome_Music_Player/src/test/resources/SingingBowl.wav
+-/tmp/junit13182780572601397576/firstSong.wav

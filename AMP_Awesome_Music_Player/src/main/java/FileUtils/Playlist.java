@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
@@ -45,6 +47,21 @@ public class Playlist {
         } else {
             playlist.add(position, new Entries(file));
         }
+    }
+
+    public void addToPlaylist(File file) {
+        String filePath = file.getAbsolutePath();
+        String fileName = NameConverter.toSongName(filePath);
+        playlist.add(new Entries(file));
+    }
+
+    public void removeFromPlaylist(ArrayList<Integer> indices) {
+        ArrayList<Entries> newList = (ArrayList<Entries>) IntStream
+                .range(0, playlist.size())
+                .filter(i -> !indices.contains(i))
+                .mapToObj(i -> playlist.get(i))
+                .collect(Collectors.toList());
+        playlist = newList;
     }
 
     public void reorderPlaylist(int startPosition, int endPosition, File file) {

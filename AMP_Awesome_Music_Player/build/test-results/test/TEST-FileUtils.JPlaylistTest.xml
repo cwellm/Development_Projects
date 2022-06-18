@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FileUtils.JPlaylistTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-18T06:03:27" hostname="myarchchristoph" time="0.006">
+  <properties/>
+  <testcase name="testSongList()" classname="FileUtils.JPlaylistTest" time="0.002"/>
+  <testcase name="testFileConstructor()" classname="FileUtils.JPlaylistTest" time="0.002"/>
+  <testcase name="testShufflePlaylist()" classname="FileUtils.JPlaylistTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,15 +1,18 @@
 package Executor;
 
 import Audio.AudioBackEnd;
+import Controller.IBasicControlsDispatcher;
 import Controller.IBasicControlsGUIController;
 import Logging.Logger;
+import lombok.NonNull;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
+import java.io.File;
 import java.io.IOException;
 
-public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, Runnable {
+public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, Runnable, IBasicControlsDispatcher {
 
     private static final int READING_BYTE_SIZE = 1024;
     private final AudioBackEnd audioBackEnd;
@@ -27,8 +30,10 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
 
     private byte[] currentByteBuffer;
 
-    public BasicControlsGUIExecutorV1(AudioBackEnd audioBackEnd, Logger logger) {
-        this.audioBackEnd = audioBackEnd;
+    private ControllerState controllerState;
+
+    public BasicControlsGUIExecutorV1(AudioBackEnd backEnd, Logger logger) {
+        this.audioBackEnd = backEnd;
         this.logger = logger;
         isPlay = false;
         isPause = false;
@@ -39,6 +44,7 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
         playingPosition = 0;
         bytesRead = 0;
         currentByteBuffer = new byte[READING_BYTE_SIZE];
+        controllerState = ControllerState.RESTING;
     }
 
     @Override
@@ -57,6 +63,7 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
         isStop = true;
         isPause = false;
         isPlay = false;
+
     }
 
     @Override
@@ -69,8 +76,12 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
             isPause = true;
         } else {
             isPause = false;
-            notifyAll();
         }
+    }
+
+    @Override
+    public @NonNull ControllerState getcontrollerState() {
+        return this.controllerState;
     }
 
     public void run() {
@@ -93,6 +104,7 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
             // todo do something
         }
         playDataLine.start();
+        controllerState = ControllerState.PLAYING;
 
         while (isPlay) {
             while (isPause) {
@@ -122,10 +134,24 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
 
         playDataLine.drain();
         playDataLine.close();
+        controllerState = ControllerState.RESTING;
         try {
             audioInputStream.close();
         } catch (IOException e) {
             // todo handle
         }
+    }
+
+    @Override
+    public void triggerSongPlay(String filePath) {
+        audioBackEnd.setFile(new File(filePath));
+        if (audioBackEnd.setIfFileFormatSupported() && audioBackEnd.setIfAudioInputLineAvailable()) {
+            startAction();
+        }
+    }
+
+    @Override
+    public void triggerSongStop() {
+        stopAction();
     }
 }
