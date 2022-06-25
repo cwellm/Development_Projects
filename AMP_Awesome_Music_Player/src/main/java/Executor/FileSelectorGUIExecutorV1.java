@@ -1,5 +1,6 @@
 package Executor;
 
+import Communicator.FileSelectorBasicControlsCommunicator;
 import Controller.IFileSelectorDispatcher;
 import Controller.IFileSelectorGUIController;
 import Controller.SaveScreen.ISaveScreenGUIController;
@@ -38,10 +39,16 @@ public class FileSelectorGUIExecutorV1 implements IFileSelectorGUIController, IF
 
     private ArrayList<Integer> selectedIndices;
 
+    private int currentPlayingIndex = -1;
+
+    private FileSelectorBasicControlsCommunicator communicator;
+
     // todo overthink this design...the constructor is now in "initialize" and called from the outside...
     // ...maybe create an abstract class implementing the interface, which inherits to this class then
-    public FileSelectorGUIExecutorV1(Logger logger) {
+    public FileSelectorGUIExecutorV1(Logger logger, FileSelectorBasicControlsCommunicator communicator) {
         selectedIndices = new ArrayList<>();
+        this.communicator = communicator;
+        this.communicator.setFileSelectorDispatcher(this);
     }
 
     @Override
@@ -67,6 +74,7 @@ public class FileSelectorGUIExecutorV1 implements IFileSelectorGUIController, IF
             while ((line = reader.readLine()) != null) {
                 jPlaylist.addToPlaylist(new File(line));
             }
+            currentPlayingIndex = 0;
         } catch (IOException x) {
             // todo suitable behavior
         }
@@ -112,6 +120,9 @@ public class FileSelectorGUIExecutorV1 implements IFileSelectorGUIController, IF
     @Override
     public void shuffleList() {
         jPlaylist.shufflePlaylist();
+        Globals.backend.setFile(jPlaylist.getPlaylist().get(0).getAudioFile());
+        Globals.backend.setIfFileFormatSupported();
+        Globals.backend.setIfAudioInputLineAvailable();
     }
 
     @Override
@@ -168,17 +179,28 @@ public class FileSelectorGUIExecutorV1 implements IFileSelectorGUIController, IF
 
     @Override
     public void setToNextListPosition() {
+        if (currentPlayingIndex == jPlaylist.getPlaylist().size() - 1) {
+            communicator.dispatchStop();
+        }
 
+        currentPlayingIndex += 1;
+        Globals.backend.setFile(jPlaylist.getPlaylist().get(currentPlayingIndex).getAudioFile());
+        Globals.backend.setIfFileFormatSupported();
+        Globals.backend.setIfAudioInputLineAvailable();
+        communicator.dispatchPlay();
     }
 
     @Override
     public void setToListPosition(int listPosition) {
-
+        currentPlayingIndex = listPosition;
+        Globals.backend.setFile(jPlaylist.getPlaylist().get(listPosition).getAudioFile());
+        Globals.backend.setIfFileFormatSupported();
+        Globals.backend.setIfAudioInputLineAvailable();
     }
 
     @Override
     public int getCurrentPlayingIndex() {
-        return 1;
+        return currentPlayingIndex;
     }
 
     @Override
@@ -210,6 +232,7 @@ public class FileSelectorGUIExecutorV1 implements IFileSelectorGUIController, IF
             JList.DropLocation dl = (JList.DropLocation) support.getDropLocation();
             int dropIndex = dl.getIndex();
             jPlaylist.addToPlaylist(dropIndex, new File(filePath));
+            currentPlayingIndex = dropIndex;
 
             // load the imported data into the audio player
             loadFile(filePath);
@@ -223,13 +246,6 @@ public class FileSelectorGUIExecutorV1 implements IFileSelectorGUIController, IF
             }
             return true;
         }
-    }
-
-    // todo: better to update JList according to playlist (tying them together)? And without parameters?
-    // todo YES: SEE JPlaylist class - take Playlist and add the JList to it!
-    private void updateJlist(JList list, int dropIndex, String fileName) {
-        DefaultListModel listModel = (DefaultListModel)list.getModel();
-        listModel.add(dropIndex, fileName);
     }
 
     public JPlaylist getJPlaylist() {

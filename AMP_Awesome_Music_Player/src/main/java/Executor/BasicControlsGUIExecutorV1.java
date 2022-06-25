@@ -1,6 +1,7 @@
 package Executor;
 
 import Audio.AudioBackEnd;
+import Communicator.FileSelectorBasicControlsCommunicator;
 import Controller.IBasicControlsDispatcher;
 import Controller.IBasicControlsGUIController;
 import Logging.Logger;
@@ -32,9 +33,13 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
 
     private ControllerState controllerState;
 
-    public BasicControlsGUIExecutorV1(AudioBackEnd backEnd, Logger logger) {
+    private FileSelectorBasicControlsCommunicator communicator;
+
+    public BasicControlsGUIExecutorV1(AudioBackEnd backEnd, Logger logger, FileSelectorBasicControlsCommunicator communicator) {
         this.audioBackEnd = backEnd;
         this.logger = logger;
+        this.communicator = communicator;
+        this.communicator.setBasicControlsDispatcher(this);
         isPlay = false;
         isPause = false;
         isStop = false;
@@ -60,9 +65,11 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
 
     @Override
     public synchronized void stopAction() {
+        controllerState = ControllerState.RESTING;
         isStop = true;
         isPause = false;
         isPlay = false;
+        communicator.dispatchBasicControlsSignalToFileSelector(controllerState);
 
     }
 
@@ -134,7 +141,10 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
 
         playDataLine.drain();
         playDataLine.close();
-        controllerState = ControllerState.RESTING;
+        isPlay = false;
+        if (!(controllerState == ControllerState.RESTING)) {
+            communicator.dispatchBasicControlsSignalToFileSelector(controllerState);
+        }
         try {
             audioInputStream.close();
         } catch (IOException e) {
@@ -148,6 +158,11 @@ public class BasicControlsGUIExecutorV1 implements IBasicControlsGUIController, 
         if (audioBackEnd.setIfFileFormatSupported() && audioBackEnd.setIfAudioInputLineAvailable()) {
             startAction();
         }
+    }
+
+    @Override
+    public void triggerSongPlay() {
+        startAction();
     }
 
     @Override

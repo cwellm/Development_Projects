@@ -39,15 +39,11 @@ import java.io.File;
 public class MainApp {
     public static void main(String[] args) {
 
-        BasicControlsGUIExecutorV1 basicExecutor = new BasicControlsGUIExecutorV1(Globals.backend, Globals.logger);
-        final BasicControlsGUI basicGui = new BasicControlsGUI(basicExecutor);
-        FileSelectorGUIExecutorV1 fileExecutor = new FileSelectorGUIExecutorV1(Globals.logger);
-        final FileSelectorGUI selectorGui = new FileSelectorGUI(fileExecutor);
-
-        AMPGUI ampgui = new AMPGUI(null, basicGui, selectorGui, null, null);
+        AMPV1 ampgui = new AMPV1();
+        ampgui.setup();
 
         SwingUtilities.invokeLater(
-                () -> {ampgui.execute();}
+                () -> {ampgui.getAmpgui().execute();}
         );
 
     }
